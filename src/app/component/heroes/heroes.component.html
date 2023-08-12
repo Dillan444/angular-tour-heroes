@@ -1,0 +1,14 @@
+<h2 class="text-info Small shadow hero">{{ hero.name  | uppercase }} Details</h2>
+<div><span>id: </span>{{ hero.id }}</div>
+<div><span>name: </span>{{ hero.name }}</div>
+<div><img class="img-thumbnail img-fluid"
+  [src]="hero.image" [alt]="hero.name"></div>
+<div><span>gender: </span>{{ hero.gender }}</div>
+<div><span>height: </span>{{ hero.height }} cm</div>
+<div><span>weight: </span>{{ hero.weight }} kg</div>
+<div>
+  <span>powers: </span>
+  {{ hero.powers }}
+</div>
+<div><span>weakness: </span>{{ hero.weakness }}</div>
+<div *ngIf="hero.weapons"><span>weapons: </span>{{ hero.weapons }}</div>
