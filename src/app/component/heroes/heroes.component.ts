@@ -7,6 +7,7 @@ import { Hero } from 'src/app/models/hero.model';
   styleUrls: ['./heroes.component.scss']
 })
 export class HeroesComponent {
+  name = ''
 
   hero: Hero = {
     id: 1,
