@@ -7,5 +7,6 @@ export interface Hero {
   powers: string[];
   weakness: string
   weapons: string[] | null;
-  image: string
+  image: string;
+  description?: string
 }
