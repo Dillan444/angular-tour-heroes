@@ -1,70 +1,24 @@
 <div class="container text-center">
-  <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 justify-content-evenly">
-    <div class="col" *ngFor="let hero of heroes">
-      <div class="card" style="width: 100%;">
-        <img [src]="hero.image" class="card-img-top" [alt]="hero.name">
-        <div class="card-body">
-          <h5 class="card-title">{{ hero.name }}</h5>
-          <p class="card-text">{{ hero.description }}</p>
-          <a href="#" class="btn btn-primary">Ver detalle</a>
-        </div>
-      </div>
+  <div class="row">
+    <div class="col-4">
+      <app-list [heroes]="heroes"></app-list>
+    </div>
+    <div class="col-1"></div>
+    <div class="col-7">
+      <app-details [hero]="heroes[0]"></app-details>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <app-table [heroes]="heroes"></app-table>
     </div>
   </div>
 </div>
 
 <div class="container text-center">
-  <div class="row">
-    <div class="col">
-      <table class="table table-striped">
-        <thead>
-          <tr>
-            <th scope="col">ID</th>
-            <th scope="col">Nombre</th>
-            <th scope="col">Poderes</th>
-            <th scope="col">Imagen</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let hero of heroes">
-            <th scope="row">{{ hero.id }}</th>
-            <td>{{ hero.name }}</td>
-            <td>{{ hero.powers }}</td>
-            <td><img class="img-fluid hero-image" [src]="hero.image" [alt]="hero.name"></td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col">
-      <h3>Lista heroes</h3>
-      <div class="list-group" *ngFor="let hero of heroes">
-        <button type="button" class="list-group-item list-group-item-action btn btn-dark" aria-current="true">
-          {{ hero.id + " " + hero.name }}
-        </button>
-      </div>
-    </div>
-    <div class="col"></div>
-    <div class="col">
-      <h2 class="text-info Small shadow hero">{{ heroes[0].name | uppercase }} Details</h2>
-      <div class="details-container">
-        <div><span>id: </span>{{ heroes[0].id }}</div>
-      <div>
-        <label for="name">Name: </label>
-        <input type="text" [(ngModel)]="heroes[0].name">
-      </div>
-      <div><img class="img-thumbnail img-fluid" [src]="heroes[0].image" [alt]="heroes[0].name"></div>
-      <div><span>gender: </span>{{ heroes[0].gender }}</div>
-      <div><span>height: </span>{{ heroes[0].height }} cm</div>
-      <div><span>weight: </span>{{ heroes[0].weight }} kg</div>
-      <div>
-        <span>powers: </span>
-        {{ heroes[0].powers }}
-      </div>
-      <div><span>weakness: </span>{{ heroes[0].weakness }}</div>
-      <div *ngIf="heroes[0].weapons"><span>weapons: </span>{{ heroes[0].weapons }}</div>
-      </div>
+  <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 justify-content-evenly">
+    <div class="col" *ngFor="let hero of heroes">
+      <app-card [hero]="hero"></app-card>
     </div>
   </div>
 </div>

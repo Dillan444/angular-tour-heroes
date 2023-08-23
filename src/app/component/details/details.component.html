@@ -1,0 +1,23 @@
+<div *ngIf="hero" class="details-container">
+  <h2 class="text-info Small shadow hero">{{ hero.name | uppercase }} Details</h2>
+
+  <div class="details">
+    <div><span>id: </span>{{ hero.id }}</div>
+    <div>
+      <label for="name">Nombre: </label>
+      <input type="text" [(ngModel)]="hero.name">
+    </div>
+
+    <div><span>Genero: </span>{{ hero.gender }}</div>
+    <div><span>Estatura: </span>{{ hero.height }} cm</div>
+    <div><span>Peso: </span>{{ hero.weight }} kg</div>
+    <div>
+      <span>Poderes: </span>
+      {{ hero.powers }}
+    </div>
+    <div><span>Debilidad: </span>{{ hero.weakness }}</div>
+    <div *ngIf="hero.weapons"><span>Armas: </span>{{ hero.weapons }}</div>
+  </div>
+  <div><img class="img-thumbnail img-fluid" [src]="hero.image" [alt]="hero.name"></div>
+
+</div>
