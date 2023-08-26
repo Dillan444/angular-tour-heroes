@@ -9,6 +9,11 @@ import { HEROES } from 'src/app/mock-heroes';
 })
 export class HeroesComponent {
   name = ''
+  heroSelected: Hero | null = null
 
   heroes: Hero[] = HEROES
+
+  onSelect(hero : Hero) {
+    this.heroSelected = hero
+  }
 }

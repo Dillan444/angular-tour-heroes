@@ -1,9 +1,9 @@
-<div *ngIf="hero" class="card" style="width: 100%;">
+<div (mouseout)="showHeroDetails(hero)" *ngIf="hero" class="card" style="width: 100%;">
   <img [src]="hero.image" class="card-img-top" [alt]="hero.name">
   <div class="card-body">
     <h5 class="card-title">{{ hero.name }}</h5>
     <p class="card-text">{{ hero.description }}</p>
-    <a href="#" class="btn btn-primary">Ver detalle</a>
+    <button (click)="chooseHero(hero)" class="btn btn-primary">Ver detalle</button>
   </div>
 </div>
 <ng-template>

@@ -9,4 +9,11 @@ import { Hero } from 'src/app/models/hero.model';
 export class ListComponent {
 
   @Input() heroes: Hero[] | null = null
+  @Output() chooseHero = new EventEmitter<Hero>();
+
+  onSelect(hero: Hero) {
+    this.chooseHero.emit(hero)
+  }
+
+
 }
