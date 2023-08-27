@@ -8,10 +8,16 @@ import { Hero } from 'src/app/models/hero.model';
 })
 export class ListComponent {
 
+  selectedHero: Hero | false = false
+
   @Input() heroes: Hero[] | null = null
+  @Input() setHero(hero: Hero) {
+    this.selectedHero = hero
+  }
   @Output() chooseHero = new EventEmitter<Hero>();
 
   onSelect(hero: Hero) {
+    this.selectedHero = hero
     this.chooseHero.emit(hero)
   }
 
